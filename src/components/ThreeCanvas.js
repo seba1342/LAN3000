@@ -40,6 +40,7 @@ class ThreeCanvas extends Component {
     this.renderer.setClearColor(0x000000, 0);
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setSize(width, height);
+    // this.renderer.capabilities.maxTextureSize;
 
     this.threeCanvas.current.appendChild(this.renderer.domElement);
 
@@ -86,8 +87,6 @@ class ThreeCanvas extends Component {
 
     textureLoader.load(`webgl/${this.props.modelName}/texture.jpg`, texture => {
       texture.mapping = this.THREE.SphericalReflectionMapping;
-      texture.minFilter = this.THREE.NearestFilter;
-      texture.center.set(.5, .5);
 
       const material = new this.THREE.MeshBasicMaterial({ envMap: texture });
 
