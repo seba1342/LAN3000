@@ -28,11 +28,16 @@ const Layout = ({ children }) => {
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
       <div className="layout">
         <main>{children}</main>
-        {/* <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer> */}
+        <footer>
+          Built by
+          {' '}
+          <a href="https://seb.bailouni.com">Seb</a>.
+          {' '}
+          Knowledge by
+          {' '}
+          <a href="https://instagram.com/patbailouni/">Pat</a>.
+
+        </footer>
       </div>
     </>
   );

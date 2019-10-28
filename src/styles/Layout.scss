@@ -1,4 +1,24 @@
+html,
+body {
+  background-color: #eeeeee;
+}
+
+body {
+  margin: 40px auto;
+  max-width: 650px;
+  padding: 0 10px;
+}
+
 .layout {
-  overflow-x: hidden;
-  font-family: "Times New Roman", Times, serif;
+  min-height: 100vh;
+}
+
+main {
+  padding-bottom: 2.5rem;
+}
+
+footer {
+  bottom: 0;
+  position: absolute;
+  height: 2.5rem;
 }
