@@ -2,16 +2,17 @@ module.exports = {
   siteMetadata: {
     title: 'Help yo self books',
     description: 'A directory of self help books, hand picked by the youth of today for the youth of today.',
-    author: '@gatsbyjs',
+    author: '@seba',
   },
   plugins: [
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-mdx',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'images',
-        path: `${__dirname}/src/images`,
+        name: 'pages',
+        path: `${__dirname}/src/pages`,
       },
     },
     'gatsby-transformer-sharp',

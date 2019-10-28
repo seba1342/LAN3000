@@ -1,5 +1,6 @@
 import React from 'react';
-// import { graphql, Link } from 'gatsby';
+import { graphql, Link } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -13,35 +14,21 @@ class BookPage extends React.Component {
   }
 
   render() {
+    const { frontmatter } = this.props.data.mdx;
+    const { body } = this.props.data.mdx;
 
     return(
       <Layout>
         <SEO title="Home" />
-
-        <div className="index-page">
-          <div className="thumbnail">
-            <ThreeCanvas
-              modelName="compact"
-            />
-            <div className="thumbnail-content">
-              <div className="title">
-                How to win friends and influence people
-              </div>
-              <div className="author">
-                Dale Carnegie
-              </div>
-            </div>
-          </div>
-
-          <div className="intro">
-            Websites act as virtual architecture. Websites are private homes and
-            public parks. Websites provide community services. Existing public
-            structures have become Websites, including the Town square, Market,
-            Libraries, Schools, Stage, Clubs, Galleries, Public forums etc. Websites
-            act like buildings and public pools. Websites are inhabited together and
-            become social in their nature. Like all self organised spaces, Websites
-            rely on independence, open collaboration and agency to give them
-            resilience.
+        <Link to="/" className="back-button">← Back to 📚</Link>
+        <div className="book-page">
+          <ThreeCanvas
+            bookName={frontmatter.path}
+          />
+          <div className="book-page__book">
+            <h1>{frontmatter.title}</h1>
+            <h3>{frontmatter.author}</h3>
+            <MDXRenderer>{body}</MDXRenderer>
           </div>
         </div>
 
@@ -52,14 +39,15 @@ class BookPage extends React.Component {
 
 export default BookPage;
 
-// export const query = graphql`
-//   query($pathSlug: String!) {
-//     markdownRemark(fields: { slug: { eq: $pathSlug } }) {
-//       html
-//       frontmatter {
-//         title
-//         tags
-//       }
-//     }
-//   }
-// `;
+export const query = graphql`
+  query($pathSlug: String!) {
+    mdx(frontmatter: { path: { eq: $pathSlug } }) {
+      body
+      frontmatter {
+        title
+        author
+        path
+      }
+    }
+  }
+`;

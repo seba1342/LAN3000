@@ -40,7 +40,6 @@ class ThreeCanvas extends Component {
     this.renderer.setClearColor(0x000000, 0);
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setSize(width, height);
-    // this.renderer.capabilities.maxTextureSize;
 
     this.threeCanvas.current.appendChild(this.renderer.domElement);
 
@@ -85,12 +84,12 @@ class ThreeCanvas extends Component {
   loadObjectWithMeshBasicMaterial = () => {
     const textureLoader = new this.THREE.TextureLoader(this.loadingManager);
 
-    textureLoader.load(`webgl/${this.props.modelName}/texture.jpg`, texture => {
+    textureLoader.load(`webgl${this.props.bookName}.jpg`, texture => {
       texture.mapping = this.THREE.SphericalReflectionMapping;
 
       const material = new this.THREE.MeshBasicMaterial({ envMap: texture });
 
-      this.objLoader.load(`webgl/${this.props.modelName}/model.obj`, object => {
+      this.objLoader.load('webgl/model.obj', object => {
         this.object = object;
 
         this.object.traverse(node => {
