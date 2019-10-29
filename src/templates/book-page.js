@@ -1,7 +1,8 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
+import Header from '../components/header';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import ThreeCanvas from '../components/ThreeCanvas';
@@ -14,13 +15,16 @@ class BookPage extends React.Component {
   }
 
   render() {
-    const { frontmatter } = this.props.data.mdx;
-    const { body } = this.props.data.mdx;
+    const { frontmatter, body } = this.props.data.mdx;
+    const { site } = this.props.data;
 
     return(
       <Layout>
         <SEO title="Home" />
-        <Link to="/" className="back-button">← Back to 📚</Link>
+        <Header
+          siteTitle={site.siteMetadata.title}
+        />
+
         <div className="book-page">
           <ThreeCanvas
             bookName={frontmatter.path}
@@ -41,6 +45,11 @@ export default BookPage;
 
 export const query = graphql`
   query($pathSlug: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     mdx(frontmatter: { path: { eq: $pathSlug } }) {
       body
       frontmatter {

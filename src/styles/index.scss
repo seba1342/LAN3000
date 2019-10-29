@@ -1,8 +1,8 @@
-@import "layout.css";
-@import "Layout.scss";
-
+@import "./components/Header.scss";
 @import "./components/ThreeCanvas.scss";
 @import "./components/ThreeJs.scss";
+@import "./components/Layout.scss";
+@import "./components/layout.css";
 
 @import "./pages/index-page.scss";
 @import "./pages/book-page.scss";

@@ -1,0 +1,19 @@
+header {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50px;
+  margin: 10px;
+}
+
+.header__link {
+  text-decoration: none;
+  color: #444444;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

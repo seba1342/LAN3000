@@ -1,11 +1,9 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 
+import Header from '../components/header';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { italic } from 'ansi-colors';
-// import ThreeCanvas from '../components/ThreeCanvas';
-
 
 class IndexPage extends React.Component {
   componentDidMount() {
@@ -14,13 +12,16 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    const { allMdx } = this.props.data;
+    const { allMdx, site } = this.props.data;
 
 
 
     return(
       <Layout>
         <SEO title="Home" />
+        <Header
+          siteTitle={site.siteMetadata.title}
+        />
 
         <div className="index-page__intro">
           <p>
@@ -29,7 +30,7 @@ class IndexPage extends React.Component {
             to read.
           </p>
           <p>
-            Thank you to <a href="https://instagram.com/patbailouni">@patbailouni</a> for
+            Thank you <a href="https://instagram.com/patbailouni" target="_blank" rel="noopener noreferrer">@patbailouni</a> for
             offering your knowledge on each of these books. Each summary has been
             pulled straight from his brain.
           </p>
@@ -66,6 +67,11 @@ export default IndexPage;
 
 export const query = graphql`
   query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allMdx {
       edges {
         node {
