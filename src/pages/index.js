@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 
-import Header from '../components/header';
-import Layout from '../components/layout';
+import Header from '../components/Header';
+import Layout from '../components/Layout';
 import SEO from '../components/seo';
 
 class IndexPage extends React.Component {
@@ -18,8 +18,9 @@ class IndexPage extends React.Component {
 
     return(
       <Layout>
-        <SEO title="Home" />
+        <SEO title=" " />
         <Header
+          isHome
           siteTitle={site.siteMetadata.title}
         />
 
@@ -45,7 +46,7 @@ class IndexPage extends React.Component {
               return (
                 <Link to={frontmatter.path} key={indexKey} className="index-page__link">
                   <div className="index-page__link--row">
-                    <span className="index-page__link--book">📖</span>
+                    <span className="index-page__link--book" role="img" aria-label="Book hover emoji">📖</span>
                     <div className="index-page__link--col">
                       <h2>{frontmatter.title}</h2>
                       <p>{frontmatter.author}</p>

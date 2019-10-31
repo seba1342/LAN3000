@@ -3,7 +3,7 @@ header {
   position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   height: 50px;
   margin: 10px;
@@ -15,5 +15,10 @@ header {
 
   &:hover {
     text-decoration: underline;
+  }
+
+  &--back {
+    position: absolute;
+    left: 0;
   }
 }

@@ -2,8 +2,8 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import Header from '../components/header';
-import Layout from '../components/layout';
+import Header from '../components/Header';
+import Layout from '../components/Layout';
 import SEO from '../components/seo';
 import ThreeCanvas from '../components/ThreeCanvas';
 
@@ -20,7 +20,7 @@ class BookPage extends React.Component {
 
     return(
       <Layout>
-        <SEO title="Home" />
+        <SEO title={frontmatter.title} />
         <Header
           siteTitle={site.siteMetadata.title}
         />
