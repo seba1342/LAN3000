@@ -5,6 +5,12 @@
   flex-wrap: wrap;
   padding: 10px;
 
+  &__intro {
+    p {
+      font-size: 18px;
+    }
+  }
+
   &__list {
     display: flex;
     flex-direction: row;
@@ -21,6 +27,10 @@
     margin-top: 1.5rem;
     margin-left: 0;
     padding-left: 0;
+
+    p {
+      margin: 0;
+    }
 
     &:hover {
       padding-left: 50px;
