@@ -5,20 +5,27 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 50px;
-  margin: 10px;
+  height: 36px;
+  margin: 20px auto;
+  background-color: #dddddd;
+  border-radius: 4px;
 }
 
 .header__link {
   text-decoration: none;
   color: #444444;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: bold;
 
-  &:hover {
-    text-decoration: underline;
+  &--url {
+    padding-top: -4px;
   }
 
   &--back {
     position: absolute;
-    left: 0;
+    left: 12px;
+    font-size: 20px;
+    line-height: 25px;
   }
 }

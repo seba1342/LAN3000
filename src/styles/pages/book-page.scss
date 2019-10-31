@@ -6,9 +6,9 @@
   width: 100%;
 
   &__book {
-    position: absolute;
-    max-width: 600px;
-    padding: 24px;
+    // position: absolute;
+    width: 100%;
+    // padding: 24px 0;
   }
 }
 
@@ -17,8 +17,7 @@
   color: black;
   margin: 24px;
   top: 24px;
-  position: absolute;
-  z-index: 2;
+  // z-index: 2;
 
   &:hover {
     text-decoration: underline;

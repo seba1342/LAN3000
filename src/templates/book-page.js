@@ -16,14 +16,10 @@ class BookPage extends React.Component {
 
   render() {
     const { frontmatter, body } = this.props.data.mdx;
-    const { site } = this.props.data;
 
     return(
       <Layout>
         <SEO title={frontmatter.title} />
-        <Header
-          siteTitle={site.siteMetadata.title}
-        />
 
         <div className="book-page">
           <ThreeCanvas
@@ -45,11 +41,6 @@ export default BookPage;
 
 export const query = graphql`
   query($pathSlug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     mdx(frontmatter: { path: { eq: $pathSlug } }) {
       body
       frontmatter {

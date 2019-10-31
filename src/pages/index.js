@@ -18,11 +18,8 @@ class IndexPage extends React.Component {
 
     return(
       <Layout>
+
         <SEO title=" " />
-        <Header
-          isHome
-          siteTitle={site.siteMetadata.title}
-        />
 
         <div className="index-page__intro">
           <p>
@@ -34,6 +31,10 @@ class IndexPage extends React.Component {
             Thank you <a href="https://instagram.com/patbailouni" target="_blank" rel="noopener noreferrer">@patbailouni</a> for
             offering your knowledge on each of these books. Each summary has been
             pulled straight from his brain.
+          </p>
+          <p>
+            It has been developed as a part of a network of user-run public websites for public good. Have a look at
+            the others at <a href="http://openforpublic.com" target="_blank" rel="noopener noreferrer">http://openforpublic.com</a>
           </p>
         </div>
 
