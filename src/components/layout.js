@@ -10,11 +10,13 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header />
+      <div className="container">
+        <Header />
         <div className="layout">
           <main>{children}</main>
         </div>
-      <Footer />
+        <Footer />
+      </div>
     </>
   );
 };

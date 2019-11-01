@@ -3,9 +3,9 @@ header {
   position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 36px;
+  height: 75px;
   margin: 20px auto;
   background-color: #dddddd;
   border-radius: 4px;
@@ -17,15 +17,32 @@ header {
   font-family: sans-serif;
   font-size: 16px;
   font-weight: bold;
+  margin: 12px;
 
-  &--url {
-    padding-top: -4px;
+  &--home {
+    font-size: 48px;
+  }
+}
+
+.header__reader-view {
+  margin: 12px;
+  opacity: 1;
+  pointer-events: auto;
+
+  &--line {
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    margin: 3px 0;
+    border-radius: 1px;
+
+    &--last {
+      width: 16px;
+    }
   }
 
-  &--back {
-    position: absolute;
-    left: 12px;
-    font-size: 20px;
-    line-height: 25px;
+  @media (max-width: 768px) {
+    opacity: 0;
+    pointer-events: none;
   }
 }

@@ -18,21 +18,23 @@ class BookPage extends React.Component {
     const { frontmatter, body } = this.props.data.mdx;
 
     return(
-      <Layout>
-        <SEO title={frontmatter.title} />
+      <>
+        <Layout>
+          <SEO title={frontmatter.title} />
 
-        <div className="book-page">
-          <ThreeCanvas
-            bookName={frontmatter.path}
-          />
-          <div className="book-page__book">
-            <h1>{frontmatter.title}</h1>
-            <h3>{frontmatter.author}</h3>
-            <MDXRenderer>{body}</MDXRenderer>
+          <div className="book-page">
+            <ThreeCanvas
+              bookName={frontmatter.path}
+            />
+            <div className="book-page__book">
+              <h1>{frontmatter.title}</h1>
+              <h3>{frontmatter.author}</h3>
+              <MDXRenderer>{body}</MDXRenderer>
+            </div>
           </div>
-        </div>
 
-      </Layout>
+        </Layout>
+      </>
     );
   }
 }

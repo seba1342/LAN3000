@@ -9,19 +9,34 @@
 }
 
 html {
-  // background-color: #cccccc;
   margin: 0;
   padding: 0;
 }
 
 body {
+  transition: 0.5s background-color;
+
+  background-color: #cccccc;
+
+  @media (max-width: 768px) {
+    background-color: #eeeeee;
+  }
+}
+
+.container {
+  transition: 0.2s all;
+
   background-color: #eeeeee;
   margin: 24px auto;
   max-width: 650px;
-  // padding: 18px 48px;
-  padding: 0 10px;
+  padding: 18px 48px;
   min-height: 100vh;
-  // box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 2px 11px 10px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 768px) {
+    padding: 0 10px;
+    box-shadow: none;
+  }
 }
 
 .layout {
