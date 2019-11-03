@@ -23,11 +23,11 @@ class IndexPage extends React.Component {
         <div className="index-page__intro">
           <p>
             This website is a carefully curated collection of self help books.
-            Its purpose is to serve as repository where people can find something new and interesting
+            Its purpose is to serve as a repository where people can find something new and interesting
             to read.
           </p>
           <p>
-            Thank you <a href="https://instagram.com/patbailouni" target="_blank" rel="noopener noreferrer">@patbailouni</a> for
+            A huge thank you to <a href="https://instagram.com/patbailouni" target="_blank" rel="noopener noreferrer">@patbailouni</a> for
             offering your knowledge on each of these books. Each summary has been
             pulled straight from his brain.
           </p>
